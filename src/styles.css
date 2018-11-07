@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+body, html {
+    height: 100%;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("./assets/restaurant_image.jpg");
+
+    /* Full height */
+    height: 50%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#hero-image {
+
+	height: 550px;
+	width: 100%;
+	background-color: #444;
+	background-image: url('./assets/restaurant_image.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+
+}
+
+
+
+#hero-image::before {
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.15);
+	content: "";
+
+}
+
+
+
+#hero-image #hero-title {
+
+	position: absolute;
+	background-color: #fff;
+	padding: 25px 60px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: 0;
+  margin: 0px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.6em;
+  letter-spacing: 0.4px;
+
+}
