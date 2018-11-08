@@ -1,0 +1,6 @@
+/* .filter-item:hover{
+  background-color: grey;
+} */
+li {
+  cursor: pointer;
+}

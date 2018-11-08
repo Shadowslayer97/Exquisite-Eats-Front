@@ -1,15 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <div class="row text-center">
-    <div class="col-sm-6">
-      <h4>Hello</h4>
-    </div>
-    <div class="col-sm-6">
-      <h4>World</h4>
-    </div>
+<div class="row">
+  <div class="col-sm-2">
+    <app-filter-list></app-filter-list>
   </div>
-  <app-dish-list></app-dish-list>
+  <div class="col-sm-8">
+    <app-dish-list></app-dish-list>
+  </div>
+  <div class="col-sm-2">
+    <app-order></app-order>
+  </div>
+
 </div>
