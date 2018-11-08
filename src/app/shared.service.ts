@@ -11,7 +11,12 @@ export class SharedService {
 
   constructor() { }
 
-  updateFilter(filter:any) {
-    this.chosenFilter.next((filter));
+  updateFilter(filter:number) {
+    let queryParams = {
+      params:{
+        filterId:filter
+      }
+    }
+    this.chosenFilter.next((queryParams));
   }
 }

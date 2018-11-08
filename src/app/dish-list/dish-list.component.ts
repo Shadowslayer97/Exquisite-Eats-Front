@@ -14,21 +14,21 @@ export class DishListComponent implements OnInit {
   private dishList: any;
   private subscriber: Subscription;
 
-  @Input() chosenFilter: any;
+  @Input() chosenFilter: any = {};
 
 
-  constructor(private exquisiteSvc: ExquisiteService,private sharedSvc: SharedService) { }
+  constructor(private _exquisiteSvc: ExquisiteService,private _sharedSvc: SharedService) { }
 
   ngOnInit() {
-    this.exquisiteSvc.getRequest(this.dishUrl).subscribe(data => {
-      this.dishList = data;
-      console.log(this.dishList);
-    })
-    this.subscriber = this.sharedSvc.chosenFilter$.subscribe(filter => {
+    this.subscriber = this._sharedSvc.chosenFilter$.subscribe(filter => {
       this.chosenFilter = filter;
       //Call to get all dishes
-      console.log(this.chosenFilter);
+      this._exquisiteSvc.getRequest(this.dishUrl,this.chosenFilter).subscribe(data => {
+        this.dishList = data;
+        console.log(this.dishList);
+      })
     })
+
   }
 
 }
