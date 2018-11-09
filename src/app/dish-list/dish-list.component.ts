@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs/Subscription';
 export class DishListComponent implements OnInit {
 
   private dishUrl: string = "/api/dishes";
-  private dishList: any;
+  private dishList: any = [];
   private subscriber: Subscription;
 
   @Input() chosenFilter: any = {};

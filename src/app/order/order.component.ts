@@ -36,17 +36,29 @@ export class OrderComponent implements OnInit {
     this.orderListUrl = this.orderListUrl + currentUserId;
     this._exquisiteSvc.postRequest(this.orderListUrl,postOrder).subscribe(data => {
       //Open success model
+      this.createToast("Order placed!","green");
+    },err => {
+      this.createToast("Order could'nt be placed","red");
     })
   }
 
   incrementQuantity(index:number) {
-    console.log(index);
     this.orderList[index].quantity += 1;
   }
 
   getUserCred() {
     //Cookie logic here,get id of user
     return "1";
+  }
+
+  createToast(message:string, backgroundColor:string) {
+    let snackbar = document.getElementById("snackbar");
+    snackbar.className = "showToast";
+    snackbar.style.background = backgroundColor || "#000";
+    snackbar.innerHTML = message;
+    setTimeout(() => {
+      snackbar.className = snackbar.className.replace("showToast", "");
+    }, 3000);
   }
 
 }

@@ -1,5 +1,8 @@
-<div class="card order-list">
-  <div class="row" *ngFor="let dish of orderList; let i=index">
+<div class="card text-center">
+  <div class="col-sm-12" *ngIf="orderList.length==0">
+    <p>No items selected yet.</p>
+  </div>
+  <div class="row order-item" *ngFor="let dish of orderList; let i=index">
     <div class="col-sm-6">
       {{dish.name}}
     </div>
@@ -15,6 +18,8 @@
     </div>
   </div>
   <div class="order-btn">
-    <button type="button" class="btn btn-primary" (click)="placeOrder()" name="button"> Order </button>
+    <button type="button" class="btn btn-primary order-btn" (click)="placeOrder()" name="button"> Order </button>
+  </div>
+  <div id="snackbar">
   </div>
 </div>

@@ -1,4 +1,7 @@
 <div class="row">
+  <div class="col-sm-12 welcome-text text-center" *ngIf="dishList.length==0">
+    <h2>Welcome to the application! <br/> Please select a filter from the filter list to continue</h2>
+  </div>
   <div class="col-sm-6" *ngFor="let dish of dishList">
     <div class="card dish-item">
       <div class="dish-image">
