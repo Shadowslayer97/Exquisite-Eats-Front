@@ -10,8 +10,8 @@ export class ExquisiteService {
 
   constructor(private http: HttpClient) { }
 
-  getRequest(url: string): Observable<any> {
+  getRequest(url:string, params:any): Observable<any> {
     const API_URL = environment.apiUrl.concat(url);
-    return this.http.get<any>(API_URL);
+    return this.http.get<any>(API_URL,params);
   }
 }

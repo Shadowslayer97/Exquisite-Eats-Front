@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared.service'
 
 @Component({
   selector: 'app-filter-list',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterListComponent implements OnInit {
 
-  constructor() { }
+  selectedFilterId:number = 1;
+  // Filter dict according to sequelize models
+  filterList:any = [
+    {id:1, name:"All", filter:1},
+    {id:2, name:"Healthy", filter:2},
+    {id:3, name:"Pocket Friendly", filter:3},
+    {id:4, name:"Popular", filter:4} // TODO: Requires join of models at backend
+  ];
+
+  constructor(private _sharedService: SharedService) { }
 
   ngOnInit() {
+    //To get all dishes at page load
+    this._sharedService.updateFilter(1);
+  }
+
+  onFilterSelected(chosenFilter:any) {
+    this.selectedFilterId = chosenFilter.id;
+    this._sharedService.updateFilter(chosenFilter.filter);
   }
 
 }

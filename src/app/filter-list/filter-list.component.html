@@ -1,3 +1,10 @@
-<p>
-  filter-list works!
-</p>
+<ul class="list-group">
+  <li *ngFor="let filter of filterList"
+    class="list-group-item filter-item"
+    [class.active]="filter.id === selectedFilterId"
+    (click)="onFilterSelected(filter)"
+  >
+    <!-- <a href="#">{{filter.name}}</a> -->
+    {{filter.name}}
+  </li>
+</ul>
