@@ -1,15 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="row app-content">
-  <div class="col-sm-2 text-center">
-    <h2 style="text-align:left;">Filter</h2>
-    <app-filter-list></app-filter-list>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Exquisite Eats</a>
+    </div>
+    <div class="">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="/order">Order</a></li>
+        <li><a href="/track">Track</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="col-sm-8 text-center">
-    <app-dish-list></app-dish-list>
-  </div>
-  <div class="col-sm-2 text-center">
-    <h2 style="text-align:left;">My Order</h2>
-    <app-order></app-order>
-  </div>
-
+</nav>
+<div id="hero-image">
+  <h1 id="hero-title">EXQUISITE EATS</h1>
 </div>
+<router-outlet></router-outlet>
