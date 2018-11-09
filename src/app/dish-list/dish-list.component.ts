@@ -28,7 +28,11 @@ export class DishListComponent implements OnInit {
         console.log(this.dishList);
       })
     })
+  }
 
+  chosenDish(dish:any):any {
+    dish.quantity = 1;
+    this._sharedSvc.updateOrderList(dish);
   }
 
 }

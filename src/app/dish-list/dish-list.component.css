@@ -3,6 +3,7 @@
   width:400px;
   height:500px;
   overflow: hidden;
+  margin: 10px;
 }
 
 .dish-image {
@@ -22,6 +23,15 @@
 
 .dish-bottom {
   margin-bottom: 0px;
+}
+
+.hq-circle {
+  height:40px;
+  width:40px;
+  font-size: 25px;
+  border-radius: 100%;
+  background-color: red;
+  color: #fff;
 }
 /* div {
   width: 60px;
