@@ -1,3 +1,25 @@
-<p>
-  order works!
-</p>
+<div class="card text-center">
+  <div class="col-sm-12" *ngIf="orderList.length==0">
+    <p>No items selected yet.</p>
+  </div>
+  <div class="row order-item" *ngFor="let dish of orderList; let i=index">
+    <div class="col-sm-6">
+      {{dish.name}}
+    </div>
+    <div class="col-sm-6">
+        <div class="input-group">
+          <input type="text" name="quantity" class="form-control input-number" [(ngModel)]="dish.quantity" min="1" max="10">
+          <span class="input-group-btn">
+              <button type="button" class="quantity-right-plus btn btn-success btn-number" (click)="incrementQuantity(i)" data-type="plus" data-field="">
+                  <span class="fa fa-plus"></span>
+              </button>
+          </span>
+        </div>
+    </div>
+  </div>
+  <div class="order-btn">
+    <button type="button" class="btn btn-primary order-btn" (click)="placeOrder()" name="button"> Order </button>
+  </div>
+  <div id="snackbar">
+  </div>
+</div>

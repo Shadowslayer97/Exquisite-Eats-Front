@@ -14,4 +14,9 @@ export class ExquisiteService {
     const API_URL = environment.apiUrl.concat(url);
     return this.http.get<any>(API_URL,params);
   }
+
+  postRequest(url:string, body:any): Observable<any> {
+    const API_URL = environment.apiUrl.concat(url);
+    return this.http.post<any>(API_URL,body);
+  }
 }

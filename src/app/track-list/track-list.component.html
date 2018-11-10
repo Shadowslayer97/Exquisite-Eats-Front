@@ -1,0 +1,21 @@
+<div class="main-content text-center">
+  <h2>Track your orders</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Delivery Id</th>
+        <th>Status</th>
+        <th>Ordered on</th>
+        <th>Expected Delivery</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of userOrders">
+        <td>{{order.id}}</td>
+        <td [ngStyle]="{color:orderStatus[order.status].colour}">{{orderStatus[order.status].title}}</td>
+        <td>{{order.createdAt | date:'dd-MM-yyyy hh:mm:ss a':'+0530'}}</td>
+        <td>{{order.delivery}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
