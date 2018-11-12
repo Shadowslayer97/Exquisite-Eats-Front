@@ -20,7 +20,7 @@ export class FilterListComponent implements OnInit {
   constructor(private _sharedService: SharedService) { }
 
   ngOnInit() {
-    this.onFilterSelected(0);
+    // this.onFilterSelected(0);
   }
 
   onFilterSelected(chosenFilter:any) {
