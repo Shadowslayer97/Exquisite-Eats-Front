@@ -10,6 +10,7 @@ import { DishListComponent } from './dish-list/dish-list.component';
 import { OrderComponent } from './order/order.component';
 import { TrackListComponent } from './track-list/track-list.component';
 import { ViewComponent } from './view/view.component';
+import { RestaurantVrComponent } from './restaurant-vr/restaurant-vr.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ViewComponent } from './view/view.component';
     DishListComponent,
     OrderComponent,
     TrackListComponent,
-    ViewComponent
+    ViewComponent,
+    RestaurantVrComponent
   ],
   imports: [
     BrowserModule,

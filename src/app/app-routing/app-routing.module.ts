@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { ViewComponent } from '../view/view.component';
 import { TrackListComponent } from '../track-list/track-list.component';
+import { RestaurantVrComponent } from "../restaurant-vr/restaurant-vr.component";
 
 const appRoutes: Routes = [
   {
@@ -16,6 +17,10 @@ const appRoutes: Routes = [
   {
     path: "track",
     component: TrackListComponent
+  },
+  {
+    path: "restaurant",
+    component: RestaurantVrComponent
   }
 ];
 

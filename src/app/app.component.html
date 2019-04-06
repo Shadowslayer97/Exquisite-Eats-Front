@@ -8,11 +8,22 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="/order">Order</a></li>
         <li><a href="/track">Track</a></li>
+        <li> <button (click)="openVrPhoto()" >Restaurant VR</button></li>
       </ul>
     </div>
   </div>
 </nav>
-<div id="hero-image">
+<div id="hero-image" *ngIf="!showVr">
   <h1 id="hero-title">EXQUISITE EATS</h1>
+</div>
+<div *ngIf="showVr">
+  <a-scene>
+  <!-- <a-cube position="-1 0.5 1" rotation="0 0 0" width="1" height="1" depth="1" color="#4CC3D9">
+    <a-animation attribute="rotation" repeat="indefinite" to="0 360 0"></a-animation>
+  </a-cube>
+  <a-plane rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+  <a-sky color="#ECECEC"></a-sky> -->
+  <a-sky src="https://live.staticflickr.com/4775/26038409867_bbdf2d1d0f_o.jpg" rotation="0 -130 0"></a-sky>
+</a-scene>
 </div>
 <router-outlet></router-outlet>

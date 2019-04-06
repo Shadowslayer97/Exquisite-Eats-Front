@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'exquisite-eats-front';
+  showVr: boolean = false;
+
+  openVrPhoto() {
+    this.showVr = true;
+  }
 }

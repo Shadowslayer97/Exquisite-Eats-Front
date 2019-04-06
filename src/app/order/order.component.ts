@@ -12,7 +12,7 @@ export class OrderComponent implements OnInit {
 
   private orderList:any = [];
   private subscriber: Subscription;
-  private orderListUrl:string = "/api/order/list/"
+  private orderListUrl:string = "/api/order/list"
 
   @Input() chosenDish: any = {};
 
@@ -34,6 +34,7 @@ export class OrderComponent implements OnInit {
       this.createToast("Order placed!","green");
     },err => {
       this.createToast("Order could'nt be placed","red");
+      console.log(err)
     })
   }
 
